@@ -13,6 +13,8 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     if (typeof document !== 'undefined') {
       document.documentElement.setAttribute('data-theme', theme)
+      document.documentElement.classList.toggle('light', theme === 'light')
+      document.documentElement.classList.toggle('dark', theme === 'dark')
     }
     if (typeof localStorage !== 'undefined') {
       localStorage.setItem('theme', theme)

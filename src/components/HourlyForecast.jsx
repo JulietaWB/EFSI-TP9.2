@@ -1,5 +1,6 @@
 import { useWeatherContext } from '../context/WeatherContext.jsx'
 import { formatHourLabel } from '../utils/temperatureConverter.js'
+import { WeatherIcon } from '../utils/iconMapper.jsx'
 
 export default function HourlyForecast() {
   const { hourlyForecast, unit } = useWeatherContext()
@@ -14,8 +15,9 @@ export default function HourlyForecast() {
     <section className="col-span-12">
       <div className="flex gap-4 overflow-x-auto pb-1">
         {next24.map((item) => (
-          <div key={item.dt} className="card card-hover min-w-[88px] px-3 py-4 text-center">
-            <div className="text-[11px] text-gray-400">{formatHourLabel(item.dt_txt)}</div>
+          <div key={item.dt} className="card card-hover min-w-[96px] px-4 py-5 text-center">
+            <div className="text-[11px] text-gray-400 mb-1">{formatHourLabel(item.dt_txt)}</div>
+            <div className="flex items-center justify-center mb-1"><WeatherIcon main={item.weather?.[0]?.main} className="text-2xl text-white" /></div>
             <div className="text-lg font-semibold">{Math.round(item.main.temp)}{unitLabel}</div>
             <div className="text-[11px] text-gray-300">{item.weather?.[0]?.main}</div>
           </div>

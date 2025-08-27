@@ -1,4 +1,5 @@
 import { useWeatherContext } from '../context/WeatherContext.jsx'
+import { WeatherIcon } from '../utils/iconMapper.jsx'
 
 export default function DailyForecast() {
   const { dailyForecast, unit } = useWeatherContext()
@@ -18,7 +19,9 @@ export default function DailyForecast() {
             <div className="col-span-3 text-sm text-gray-300">
               {new Date(d.date).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}
             </div>
-            <div className="col-span-2 text-xs text-gray-300">{d.weather}</div>
+            <div className="col-span-2 flex items-center gap-2 text-xs text-gray-300">
+              <WeatherIcon main={d.weather} className="text-xl" /> {d.weather}
+            </div>
             <div className="col-span-5 h-2 bg-white/10 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-[#7c91ff] to-[#b38cff]"
