@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import viteLogo from '/icono.svg'
 import WeatherApp from './components/WeatherApp.jsx'
 import { ThemeProvider } from './context/ThemeContext.jsx'
 import { WeatherProvider } from './context/WeatherContext.jsx'
