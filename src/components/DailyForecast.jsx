@@ -12,7 +12,7 @@ export default function DailyForecast() {
 
   return (
     <section className="card card-hover col-span-6 p-4">
-      <h3 className="mb-3 font-semibold">5-day forecast</h3>
+      <h3 className="mb-3 font-semibold">Próximos 5 días</h3>
       <div className="flex flex-col gap-2">
         {nextFive.map((d) => (
           <div key={d.date} className="grid grid-cols-12 items-center gap-3">
@@ -22,13 +22,13 @@ export default function DailyForecast() {
             <div className="col-span-2 flex items-center gap-2 text-xs text-gray-300">
               <WeatherIcon main={d.weather} className="text-xl" /> {d.weather}
             </div>
-            <div className="col-span-5 h-2 bg-white/10 rounded-full overflow-hidden">
+            <div className="col-span-4 h-2 bg-white/10 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-[#7c91ff] to-[#b38cff]"
                 style={{ width: `${Math.max(6, Math.min(100, (d.max - d.min) * 10))}%` }}
               />
             </div>
-            <div className="col-span-2 text-right text-sm">
+            <div className="col-span-3 text-right text-sm whitespace-nowrap tabular-nums">
               {Math.round(d.min)}{unitLabel} · {Math.round(d.max)}{unitLabel}
             </div>
           </div>

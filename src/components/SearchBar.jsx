@@ -18,7 +18,7 @@ export default function SearchBar() {
         <FaSearch className="text-gray-400" />
         <input
           className="pill-input"
-          placeholder="Search city..."
+          placeholder="Buscar ciudad..."
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
